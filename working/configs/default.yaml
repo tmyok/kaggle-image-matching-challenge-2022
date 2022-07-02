@@ -1,0 +1,51 @@
+project_name: "IMC-2022"
+# debug
+DEBUG: False
+OUTPUT_RESULT: True
+PRINT_INFO: True
+
+# validation
+scene: all
+min_longest_edge: 700
+covisibility_thr: [0.3, 0.7]
+rotation_thr: 0.5
+dZ_thr: 100.0
+max_num_pairs: 500
+
+# inference
+DKM:
+  scale: 1.5
+  sample_num: 10000
+  nms_ret_points: 3000
+  mkpts_num_thr: 300
+LoFTR:
+  img_size: 840
+  nms_ret_points: 2000
+  conf_min_thr: 0.4
+SE2LoFTR:
+  img_size: 840
+  nms_ret_points: 2000
+  conf_min_thr: 0.4
+SGMNet:
+  mkpts_num_thr: 5000
+findFMat:
+  input_num: 3000
+  ransacReprojThreshold: 0.15
+  confidence: 0.9999
+  maxIters: 20000
+
+# optuna
+defaults:
+  - override hydra/sweeper: optuna
+  - override hydra/sweeper/sampler: tpe
+  - _self_
+
+hydra:
+  sweeper:
+    sampler:
+      seed: 42
+    direction: maximize
+    study_name: "IMC-2022"
+    storage: null
+    n_trials: 500
+    n_jobs: 1
