@@ -1,0 +1,15 @@
+[submodule "docker"]
+	path = docker
+	url = git@github.com:tmyok/pytorch.git
+[submodule "input/imc2022-submodules/DKM"]
+	path = input/imc2022-submodules/DKM
+	url = git@github.com:Parskatt/DKM.git
+[submodule "input/imc2022-submodules/se2-loftr"]
+	path = input/imc2022-submodules/se2-loftr
+	url = https://github.com/georg-bn/se2-loftr
+[submodule "input/imc2022-submodules/SGMNet"]
+	path = input/imc2022-submodules/SGMNet
+	url = git@github.com:tmyok/SGMNet.git
+[submodule "input/imc2022-submodules/ANMS-Codes"]
+	path = input/imc2022-submodules/ANMS-Codes
+	url = git@github.com:BAILOOL/ANMS-Codes.git
